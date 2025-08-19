@@ -5,32 +5,50 @@
 * {color: #12173C;}
 
 html{ font-family: "IBM Plex Sans", sans-serif; line-height: 1.25; margin: 0; padding: 0; background-color:#12173C}
-body{margin: 0; padding: 0;}
+body{margin: 0; padding: 0; display: flex; flex-direction: column; min-height: 100vh;}
 code {font-family: "IBM Plex Mono", monospace;}
 
 
 header {font-family: "DynaPuff", sans-serif; text-underline-offset: 0.2rem; font-size: 125%; 
-    background-color: white; padding: 0 0 0.5rem 0; margin: 1rem 0 1rem 0;
-    
+    background-color: #F2F2F2; padding: 0 0 0.5rem 0; margin: 1rem 0 1rem 0;
 }
+
 header h1{color: #3F5DCC}
 header nav {margin: 0 1rem 0 1rem; padding-bottom: 1rem; 
     display: flex; flex-direction: row; justify-content: space-between; align-items: baseline;}
 aside h1 {font-family: "DynaPuff", sans-serif; font-size: 125%; color: #3F5DCC}
 
-main{margin: 0 1rem 0 1rem; display: flex; flex-direction: row; gap: 1rem;}
-aside{background-color: white; border-radius: 10px; width: 15%; display: flex; flex-direction: column; align-items: center;}
+main{margin: 0 0 1rem 0 ; display: flex; flex-direction: row; gap: 1rem; justify-content: center; flex: 1;}
+aside{background-color: #F2F2F2; border-radius: 10px; width: 15%; display: flex; flex-direction: column; align-items: center;}
+aside details{align-self: flex-start; padding-left: 1rem;}
+aside details a{padding-left: 2rem; margin: 0;}
+aside details summary{cursor: pointer;}
 
+button{cursor: pointer;}
+
+@media (max-width: 1470px)
+{
+    aside{display: none;}
+}
 
 
 /*main page css*/
-table{line-height: 1.5; width: 85%; background-color: white; border-radius: 10px}
-footer{background-color: white; border-radius: 10px}
+table{line-height: 1.5; width: 70%; background-color: #F2F2F2; border-radius: 10px; padding: 0 1rem 0 1rem;}
+footer{background-color: #F2F2F2;  height: 15%; display: flex; flex-direction: row;}
 
 
 
 /*blog page css*/
-article{width: 85%; background-color: white; border-radius: 10px}
+article{width: 70%; background-color: #F2F2F2; border-radius: 10px;  padding: 0 1rem 0 1rem;
+    display: flex; flex-direction: column;}
+article footer {margin-top:2rem; display: flex; flex-direction: column; justify-content: end;}
+article footer nav{display: flex; flex-direction: row; justify-content: space-between;}
+article a{color:#3F5DCC}
+article p{margin: 1rem 0 0 0;}
+article h1{margin: 0rem 0 1rem 0;}
+article h2{margin: 1rem 0 0 0;}
+textarea{resize: vertical; width: 50%; min-height: 4rem;}
+article button{margin-bottom: 1rem; }
 
 /*make nav links not show underline unless hovering*/
 header nav a{text-decoration: none; }
