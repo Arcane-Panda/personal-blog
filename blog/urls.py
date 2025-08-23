@@ -21,6 +21,7 @@ from blogPosts import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", views.index),
+    path("page/<int:page_num>/", views.index),
     path("<int:blog_id>/", views.blogPost),
     path("about/", views.bio),
     path("search/", views.search)
