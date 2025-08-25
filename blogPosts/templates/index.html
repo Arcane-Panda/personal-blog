@@ -16,15 +16,28 @@
 
 <main>
     <div>
+    {%if pageNum == 0 and leftover <= 0%}
+    <table style="border-radius: 10px;">
+    {%else%}
     <table>
+    {%endif%}
         <tbody>
+            {%for post in main_posts%}
+            <tr><td><img alt="image" src="static{{post.thumbnail.url}}"></td> <td><h1><a href="{{post.id}}/">{{post.title}}</a></h1><h2>{{post.publicationDate}}</h2> <p>{{post.blurb}}</p></td></tr>
+            {%endfor%}
+            <!--
             <tr><td><img alt="image"></td> <td><h1><a href="blog-post.html">Blog Posts!</a></h1><h2>Jan 01</h2> <p>Short Description</p></td></tr>
-            <tr><td><img alt="image"></td> <td><h1><a href="blog-post.html">A second Blog Post!</a></h1><h2>Jan 02</h2> <p>Short Description</p></td></tr>
-            <tr><td><img alt="image"></td> <td><h1><a href="blog-post.html">A second Blog Post!</a></h1><h2>Jan 02</h2> <p>Short Description</p></td></tr>
-            <tr><td><img alt="image"></td> <td><h1><a href="blog-post.html">A second Blog Post!</a></h1><h2>Jan 02</h2> <p>Short Description</p></td></tr>
+          -->
         </tbody>
     </table>
-    <nav><a href="#">Older Posts</a> <a href="#">Newer Posts</a></nav>
+
+    {%if pageNum == 0 and leftover > 0 %}
+    <nav><a href="page/1/">Older Posts</a></nav>
+    {%elif pageNum > 0 and leftover > 0 %}
+    <nav><a href="page/{{olderPage}}/">Older Posts</a> <a href="page/{{newerPage}}/">Newer Posts</a></nav>
+    {%elif pageNum > 0 and leftover <= 0%}
+    <nav><a href="page/{{newerPage}}/">Newer Posts</a></nav>
+    {%endif%}
     </div>
     
       <aside>
