@@ -2,7 +2,23 @@ from django.shortcuts import render
 from . import models
 from collections import defaultdict
 # Create your views here.
-
+def getArchiveDict():
+    all_posts = models.BlogPost.objects.order_by("-publicationDate").all()
+    archive_dict = defaultdict(lambda: defaultdict(list))
+    for post in all_posts:
+        year = post.publicationDate.year
+        month = post.publicationDate.strftime("%B")
+        archive_dict[year][month].append(post)
+     
+    # Convert to normal dicts and sort
+    archive = {
+        year: {
+            month: posts
+            for month, posts in sorted(months.items(), key=lambda m: m[0], reverse=True)
+        }
+        for year, months in sorted(archive_dict.items(), key=lambda y: y[0], reverse=True)
+    }
+    return archive
 
 
 def index(request, page_num=0):
@@ -28,31 +44,21 @@ def index(request, page_num=0):
     
     leftover = count - end
     
-    #organize archive structure
-    archive_dict = defaultdict(lambda: defaultdict(list))
-    for post in all_posts:
-        year = post.publicationDate.year
-        month = post.publicationDate.strftime("%B")
-        archive_dict[year][month].append(post)
-     
-    # Convert to normal dicts and sort
-    archive = {
-        year: {
-            month: posts
-            for month, posts in sorted(months.items(), key=lambda m: m[0], reverse=True)
-        }
-        for year, months in sorted(archive_dict.items(), key=lambda y: y[0], reverse=True)
-    }
+    archive = getArchiveDict()
     
     olderPage = page_num + 1
     newerPage = page_num - 1
     return render(request, "index.html", {"main_posts": main_posts,"archive": archive,"pageNum": page_num, "olderPage": olderPage, "newerPage": newerPage , "leftover": leftover})
 
 def bio(request):
-    return render(request, "bio.html")
+    archive = getArchiveDict()
+    return render(request, "bio.html", {"archive": archive})
 
-def blogPost(request, blog_id):
-    return render(request, "blog-post.html")
+def blogPost(request, blog_id):    
+    archive = getArchiveDict()
+    return render(request, "blog-post.html", {"post": models.BlogPost.objects.get(id=blog_id), "archive": archive})
 
 def search(request, searchRequest):
-    return render(request, "search-results.html")
+    archive = getArchiveDict()
+    return render(request, "search-results.html", {"archive": archive})
+

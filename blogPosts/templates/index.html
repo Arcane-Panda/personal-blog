@@ -8,8 +8,8 @@
     <nav>
         <h1>Panda Orb</h1>
         <div>
-        <a href="index.html">Blog</a>
-        <a href="bio.html">About Me</a>
+        <a href="../">Blog</a>
+        <a href="../about">About Me</a>
         </div>
     </nav>
 </header>
@@ -25,9 +25,6 @@
             {%for post in main_posts%}
             <tr><td><img alt="image" src="static{{post.thumbnail.url}}"></td> <td><h1><a href="{{post.id}}/">{{post.title}}</a></h1><h2>{{post.publicationDate}}</h2> <p>{{post.blurb}}</p></td></tr>
             {%endfor%}
-            <!--
-            <tr><td><img alt="image"></td> <td><h1><a href="blog-post.html">Blog Posts!</a></h1><h2>Jan 01</h2> <p>Short Description</p></td></tr>
-          -->
         </tbody>
     </table>
 
@@ -43,7 +40,6 @@
       <aside>
         <label for="search"><h1>Peruse the Archives</h1></label>
         <form><input id="search" type="search"><button>Search</button></form>
-
         {% for year, months in archive.items%}
         <details>
             <summary>{{year}}</summary>
@@ -57,18 +53,6 @@
             {%endfor%}
         </details>
         {% endfor %}
-        <!--
-        <details>
-            <summary>2025</summary>
-            <details>
-                <summary>January</summary>
-                <a href="#">blog</a>
-            </details>
-            <details>
-                <summary>February</summary>
-                <a href="#">blog!</a>          
-            </details>
-        </details>-->
     </aside>
 </main>
 
