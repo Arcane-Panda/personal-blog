@@ -23,6 +23,9 @@ aside{background-color: #F2F2F2; border-radius: 10px; width: 15%; display: flex;
 aside details{align-self: flex-start; padding-left: 1rem;}
 aside details a{padding-left: 2rem; margin: 0;}
 aside details summary{cursor: pointer;}
+aside ul {align-self: flex-start; padding-left: 2rem; margin-top: 0;}
+aside h1 {padding-bottom: 0;}
+
 
 button{cursor: pointer;}
 
@@ -63,6 +66,8 @@ main div nav a{text-decoration: none; color: #3F5DCC; font-weight: bold;}
 main div nav a:hover{text-decoration: underline;}
 aside details a{text-decoration: none; color: #3F5DCC; font-weight: bold;}
 aside details a:hover{text-decoration: underline;}
+aside ul a{text-decoration: none; color: #3F5DCC; font-weight: bold;}
+aside ul a:hover{text-decoration: underline;}
 
 
 

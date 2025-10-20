@@ -18,7 +18,6 @@
    <article>
     <p>This page is about me! I will write things about myself here, and put links to my stuff</p>
    </article>
-
       <aside>
         <label for="search"><h1>Peruse the Archives</h1></label>
         <form><input id="search" type="search"><button>Search</button></form>
@@ -35,7 +34,14 @@
             {%endfor%}
         </details>
         {% endfor %}
-    </aside>
+
+        <h1>Tags</h1>
+        <ul>
+        {%for tag in allTags%}
+            <li><a href="#">{{tag.word}}<a/></li>
+        {%endfor%}
+        </ul>
+        </aside>
 </main>
 
 <footer>Copyright Me. All rights reservered. Logo by Sarah Hopefully?</footer>

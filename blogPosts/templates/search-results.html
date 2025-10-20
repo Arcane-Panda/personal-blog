@@ -44,6 +44,13 @@
             {%endfor%}
         </details>
         {% endfor %}
+
+        <h1>Tags</h1>
+        <ul>
+        {%for tag in allTags%}
+            <li><a href="#">{{tag.word}}<a/></li>
+        {%endfor%}
+        </ul>
     </aside>
 </main>
 

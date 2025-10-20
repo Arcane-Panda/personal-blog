@@ -22,16 +22,16 @@ def getArchiveDict():
 
 
 def index(request, page_num=0):
-    #get all the blog posts for the archive tree
-    #only render a subset for the main table
-    #try to do so in chunks of 5. e.g page one shows 1-5, two shows 6-10, etc.
-    #if there aren't enough for a full chunk, then just render whats left
+    #only showing a subset a subset of blogposts
+    #each page shows a chunk of 5. e.g page one shows 1-5, two shows 6-10, etc.
+    #if there aren't enough for a full chunk, then just render whats left 
     all_posts = models.BlogPost.objects.order_by("-publicationDate").all()
     count = all_posts.count()
     start =  5*page_num
 
     #if our calculated start is larger than the number of blogposts,
     #we are on a page number that is too high and should return an error
+    #TODO
     if(start > count):
         return render(request)
     
@@ -48,17 +48,24 @@ def index(request, page_num=0):
     
     olderPage = page_num + 1
     newerPage = page_num - 1
-    return render(request, "index.html", {"main_posts": main_posts,"archive": archive,"pageNum": page_num, "olderPage": olderPage, "newerPage": newerPage , "leftover": leftover})
+    
+    allTags = models.Tag.objects.order_by("word").all()
+    return render(request, "index.html", {"main_posts": main_posts,"archive": archive,"pageNum": page_num, 
+                                          "olderPage": olderPage, "newerPage": newerPage , "leftover": leftover,
+                                          "allTags": allTags})
 
 def bio(request):
     archive = getArchiveDict()
-    return render(request, "bio.html", {"archive": archive})
+    allTags = models.Tag.objects.order_by("word").all()
+    return render(request, "bio.html", {"archive": archive, "allTags": allTags})
 
 def blogPost(request, blog_id):    
     archive = getArchiveDict()
-    return render(request, "blog-post.html", {"post": models.BlogPost.objects.get(id=blog_id), "archive": archive})
+    allTags = models.Tag.objects.order_by("word").all()
+    return render(request, "blog-post.html", {"post": models.BlogPost.objects.get(id=blog_id), "archive": archive, "allTags": allTags})
 
 def search(request, searchRequest):
     archive = getArchiveDict()
-    return render(request, "search-results.html", {"archive": archive})
+    allTags = models.Tag.objects.order_by("word").all()
+    return render(request, "search-results.html", {"archive": archive, "allTags": allTags})
 

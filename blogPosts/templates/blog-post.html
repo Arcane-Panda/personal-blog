@@ -21,6 +21,7 @@
         <h1>{{post.title}}</h1>
         {{post.contents|safe}}
         <footer>
+            <!--TODO make this come from the actual post object-->
         <div class="tags"><a href="#">reviews</a> * <a href="#">advice</a></div>
         <nav><a href="#">Previous Post</a> <a href="#">Next Post</a></nav>            
         </footer>
@@ -48,6 +49,13 @@
             {%endfor%}
         </details>
         {% endfor %}
+
+        <h1>Tags</h1>
+        <ul>
+        {%for tag in allTags%}
+            <li><a href="#">{{tag.word}}<a/></li>
+        {%endfor%}
+        </ul>
     </aside>
 </main>
 
