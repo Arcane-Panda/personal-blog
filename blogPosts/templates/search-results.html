@@ -7,20 +7,25 @@
 {%include 'header.html'%}
 
 <main>
+    <div>
+    <!--search results for "" or no results found -->
+    {%if numResults == 0%}
+    <h1 style="border-radius: 10px">No results found for <em>"{{query}}"</em></h1>
+    {%else%}
+    <h1>Found {{numResults}} result{{pluralize}} for <em>"{{query}}"</em> in the archives</h1>
+    {%endif%}
+    <table style="border-radius: 0 0 10px 10px;">
     
-   <div>
-    <h1>Search results for "":</h1>
-    <table>
         <tbody>
-            <tr><td><img alt="image"></td> <td><h1><a href="blog-post.html">Blog Posts!</a></h1><h2>Jan 01</h2> <p>Short Description</p></td></tr>
-            <tr><td><img alt="image"></td> <td><h1><a href="blog-post.html">A second Blog Post!</a></h1><h2>Jan 02</h2> <p>Short Description</p></td></tr>
-            <tr><td><img alt="image"></td> <td><h1><a href="blog-post.html">A second Blog Post!</a></h1><h2>Jan 02</h2> <p>Short Description</p></td></tr>
-            <tr><td><img alt="image"></td> <td><h1><a href="blog-post.html">A second Blog Post!</a></h1><h2>Jan 02</h2> <p>Short Description</p></td></tr>
+            {%for post in results%}
+            <tr><td><img alt="image" src="../static{{post.thumbnail.url}}"></td> <td><h1><a href="{{post.id}}/">{{post.title}}</a></h1><h2>{{post.publicationDate}}</h2> <p>{{post.blurb}}</p></td></tr>
+            {%endfor%}
         </tbody>
     </table>
-    <nav><a href="#">Older Posts</a> <a href="#">Newer Posts</a></nav>
     </div>
-     {%include 'sidebar.html'%}
+   
+    
+    {%include 'sidebar.html'%}
 </main>
 
 <footer>Copyright Me. All rights reservered. Logo by Sarah Hopefully?</footer>

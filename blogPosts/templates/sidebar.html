@@ -1,6 +1,9 @@
 <aside>
         <label for="search"><h1>Peruse the Archives</h1></label>
-        <form><input id="search" type="search"><button>Search</button></form>
+        <form action="/search" method="get">
+            <input id="search" type="search" name="q">
+            <button>Search</button>
+        </form>
         {% for year, months in archive.items%}
         <details>
             <summary>{{year}}</summary>
@@ -18,7 +21,7 @@
         <h1>Tags</h1>
         <ul>
         {%for tag in allTags%}
-            <li><a href="#">{{tag.word}}<a/></li>
+            <li><a href="../search/?q={{tag.word}}">{{tag.word}}<a/></li>
         {%endfor%}
         </ul>
 </aside>

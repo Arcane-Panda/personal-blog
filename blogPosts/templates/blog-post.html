@@ -15,12 +15,19 @@
         <footer>
         <div class="tags">
             {%for tag in post.tags.all%}
-            <a href="#">{{tag.word}}</a> {%if not forloop.last%} * {%endif%}
+            <a href="../search/?q={{tag.word}}">{{tag.word}}</a> {%if not forloop.last%} * {%endif%}
             {%empty%}
             <p><em>This post has no tags</em></p>
             {%endfor%} 
         </div>
-        <nav><a href="#">Previous Post</a> <a href="#">Next Post</a></nav>            
+        
+        <nav>
+            {%if previous != -1%}
+            <a href="../{{previous}}">Previous Post</a> 
+            {%endif%}
+            {%if next != -1%}
+            <a href="../{{next}}">Next Post</a></nav>   
+            {%endif%}         
         </footer>
 
         <form>
