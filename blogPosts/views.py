@@ -64,6 +64,13 @@ def bio(request):
     allTags = models.Tag.objects.order_by("word").all()
     return render(request, "bio.html", {"archive": archive, "allTags": allTags})
 
+
+#view for the "My Projects" page. this is basically all static content
+def myProjects(request):
+    archive = getArchiveDict()
+    allTags = models.Tag.objects.order_by("word").all()
+    return render(request, "my-projects.html", {"archive": archive, "allTags": allTags})
+
 #view for any blog post. gets the blog object from the database and renders it
 def blogPost(request, blog_id):   
     archive = getArchiveDict()

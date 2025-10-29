@@ -24,5 +24,6 @@ urlpatterns = [
     path("page/<int:page_num>/", views.index),
     path("<int:blog_id>/", views.blogPost),
     path("about/", views.bio),
-    path("search/", views.search)
+    path("search/", views.search),
+    path("projects/",views.myProjects)
 ]

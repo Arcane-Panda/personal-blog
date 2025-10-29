@@ -12,8 +12,8 @@
     {%if numResults == 0%}
     <h1 style="border-radius: 10px">No results found for <em>"{{query}}"</em></h1>
     {%else%}
-    <h1>Found {{numResults}} result{{pluralize}} for <em>"{{query}}"</em> in the archives</h1>
-    {%endif%}
+    <h1>Found {{numResults}} result{{numResults|pluralize}} for <em>"{{query}}"</em> in the archives</h1>
+    
     <table style="border-radius: 0 0 10px 10px;">
     
         <tbody>
@@ -22,6 +22,7 @@
             {%endfor%}
         </tbody>
     </table>
+    {%endif%}
     </div>
    
     
