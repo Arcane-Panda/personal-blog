@@ -15,7 +15,16 @@
     {%endif%}
         <tbody>
             {%for post in main_posts%}
-            <tr><td><img alt="image" src="static{{post.thumbnail.url}}"></td> <td><h1><a href="{{post.id}}/">{{post.title}}</a></h1><h2>{{post.publicationDate}}</h2> <p>{{post.blurb}}</p></td></tr>
+             <tr><td><img alt="{{post.thumbnailAltText}}" src="../static{{post.thumbnail.url}}"></td> 
+
+                <td><h1><a href="../{{post.id}}/">{{post.title}}</a></h1><h2>{{post.publicationDate|date:"F d, Y"}}</h2> <p>{{post.blurb}}</p>
+                <nav><label><strong>Tags:&nbsp</label></strong>
+                    {%for tag in post.tags.all%}
+                    <a href="../search/?q={{tag.word}}">{{tag.word}}</a> {%if not forloop.last%} * {%endif%}
+                {%empty%}
+                <p><em>This post has no tags</em></p>
+                {%endfor%} </nav>
+                </td></tr>
             {%endfor%}
         </tbody>
     </table>

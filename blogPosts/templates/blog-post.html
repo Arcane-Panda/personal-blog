@@ -9,11 +9,12 @@
 <main>
     
     <article>
-        <h2>{{post.publicationDate}}</h2>
+        <h2>{{post.publicationDate |date:"F d, Y"}}</h2>
         <h1>{{post.title}}</h1>
         {{post.contents|safe}}
         <footer>
         <div class="tags">
+            <label>Tags:&nbsp</label>
             {%for tag in post.tags.all%}
             <a href="../search/?q={{tag.word}}">{{tag.word}}</a> {%if not forloop.last%} * {%endif%}
             {%empty%}
@@ -21,20 +22,21 @@
             {%endfor%} 
         </div>
         
-        <nav>
+        <nav {%if previous == -1%}style="align-self:flex-end"{%endif%}>
             {%if previous != -1%}
-            <a href="../{{previous}}">Previous Post</a> 
+            <a href="../{{previous}}"> &lt Previous Post</a> 
             {%endif%}
             {%if next != -1%}
-            <a href="../{{next}}">Next Post</a></nav>   
+            <a href="../{{next}}">Next Post &gt</a></nav>   
             {%endif%}         
         </footer>
 
+        <!--
         <form>
             <p><label for="commentBox">Leave a comment!</label></p>
             <p><textarea id="commentBox"></textarea></p>
             <p><button>Submit</button></p>
-        </form>
+        </form>-->
     </article>
 
     {%include 'sidebar.html'%}

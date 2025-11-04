@@ -1,9 +1,10 @@
 <aside>
-        <label for="search"><h1>Peruse the Archives</h1></label>
+        <label for="search"><h1>Search the Archives</h1></label>
         <form action="/search" method="get">
             <input id="search" type="search" name="q">
             <button>Search</button>
         </form>
+        <h2>Posts by Date</h2>
         {% for year, months in archive.items%}
         <details>
             <summary>{{year}}</summary>

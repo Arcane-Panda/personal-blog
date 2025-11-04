@@ -5,7 +5,7 @@
 
 * {color:#12173C;}
 
-html{ font-family: "IBM Plex Sans", sans-serif; line-height: 1.25; margin: 0; padding: 0; background-color:#12173C}
+html{ font-family: "IBM Plex Sans", sans-serif; line-height: 1.25; margin: 0; padding: 0; background-color:#3c3382}
 body{margin: 0; padding: 0; display: flex; flex-direction: column; min-height: 100vh;}
 code {font-family: "IBM Plex Mono", monospace;}
 
@@ -20,9 +20,10 @@ header nav {margin: 0 5rem 0 5rem; padding-bottom: 0rem;
     display: flex; flex-direction: row; justify-content: space-evenly; align-items: center;}
 header nav a {margin: 0 1rem 0 1rem;}
 aside h1 {font-family: "DynaPuff", sans-serif; font-size: 125%; color: #3F5DCC}
+aside h2 {font-family: "DynaPuff", sans-serif; font-size: 125%; color: #3F5DCC}
 
 main{padding-bottom: 1rem; margin: 0 0 0rem 0 ; display: flex; flex-direction: row; gap: 1rem; justify-content: center; flex: 1;
-background-image: url("../static/BackgroundImage.png"); background-size: 250px;}
+background-image: url("../static/SiteLogoTransparent.png"); background-size: 275px;}
 aside{background-color: #F2F2F2; border-radius: 10px; width: 15%; display: flex; flex-direction: column; align-items: center;}
 aside details{align-self: flex-start; padding-left: 1rem;}
 aside details a{padding-left: 2rem; margin: 0;}
@@ -33,11 +34,7 @@ aside h1 {padding-bottom: 0;}
 
 button{cursor: pointer;}
 
-@media (max-width: 1470px)
-{
-    aside{display: none;}
-    header img {max-height: 100px;}
-}
+
 
 /*main page css*/
 main div{display: flex; flex-direction: column; width: 70%;}
@@ -45,6 +42,7 @@ main div nav{display: flex; flex-direction: row; justify-content: space-between;
     background-color: #F2F2F2; border-radius: 0 0 10px 10px; line-height: 1.5; padding: 0 1rem 0 1rem; }
 table{line-height: 1.5;  background-color: #F2F2F2; border-radius: 10px 10px 0 0; padding: 1rem 1rem 1rem 1rem;}
 table tbody tr td h1{padding: 0;}
+table tbody tr td nav {padding: 0; justify-content:left}
 table img{max-height: 250px; max-width:250px;}
 table tfoot td{display: table-footer-group;}
 footer{background-color: #F2F2F2;  height: 15%; display: flex; flex-direction: row; justify-content:center}
@@ -83,3 +81,18 @@ aside ul a:hover{text-decoration: underline;}
 
 
 
+@media (max-width: 1470px)
+{
+    aside{display: none;}
+    header img {max-height: 100px;}
+    main div{width:95%}
+    main article{width:95%; margin-left: 1rem; font-size: 150%;}
+    main article footer {font-size: 100%;}
+    header img {margin-top: 0.5rem; max-height: 350px; max-width: 350px;}
+    header{font-size: 300%;}
+    header nav{flex-direction: column;}
+    footer{font-size: 200%; padding: 0.5rem;}
+    main{font-size:x-large;}
+    main table td{padding-right: 1rem;}
+    table{padding:0 0 0 1rem;}
+}

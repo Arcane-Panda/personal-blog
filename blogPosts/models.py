@@ -10,5 +10,6 @@ class BlogPost(models.Model):
     publicationDate = models.DateField()
     blurb = models.CharField(max_length=250)
     thumbnail = models.ImageField()
+    tumbnailAltText = models.CharField(max_length=250)
     contents = models.TextField()
     tags = models.ManyToManyField(Tag, related_name="posts")
