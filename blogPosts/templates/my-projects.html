@@ -1,26 +1,118 @@
 <!DOCTYPE html>
-<meta charset="UTF-8"/>
+<meta charset="UTF-8" />
 <title>About Me - Panda Orb</title>
-<link rel="icon" href="/static/favicon.ico">
-<link rel="stylesheet" href="/static/main.css">
+<link rel="icon" href="/static/favicon.ico" />
+<link rel="stylesheet" href="/static/main.css" />
 
-{%include 'header.html'%}
+{% include 'header.html' %}
 
 <main>
-   <article>
-      <p>My projects will go here!</p>
-      <ul>
-         <li>CMU Research</li>
-         <li>Senior Research Thesis</li>
-         <li>This site</li>
-         <li>Various games</li>
-         <li>School cs projects</li>
+  <article>
+    <p>A list of projects that I'm proud of!</p>
+    <h2>Programming</h2>
+    <ul>
+      <li>
+        <a href="https://github.com/Arcane-Panda/personal-blog">Panda Orb Blog</a>
+        <ul>
+          <li>I programmed this very website!</li>
+          <li>Written using Django (a Python framework) and hosted on AWS</li>
+        </ul>
+      </li>
+      <li>
+        <a href="https://github.com/Arcane-Panda/spriteEditor">Sprite Editor</a>
+        <ul>
+          <li>A drawing program that also supports onion frames for animating sprites</li>
+          <li>Written in C++ using QTCreator as part of a team</li>
+        </ul>
+      </li>
+      <li>
+        <a href="https://github.com/Arcane-Panda/spreadsheet">Spreadsheet program</a>
+        <ul>
+          <li>A simple spreadsheet that consists of an infinite number of named cells</li>
+          <li>Written in C# using .NET MAUI</li>
+        </ul>
+      </li>
+    </ul>
+    <h2>Games</h2>
+    <ul>
+      <li>
+        <a href="https://github.com/Arcane-Panda/educationalApp">Educational Game</a><br />
+        <ul>
+          <li>Simple educational game that teaches about the Complement system and the basic function of the C3 protein over the course of 3 short levels</li>
+          <li>Written in C++ using QTCreator as part of a team</li>
+        </ul>
+      </li>
+      <li>
+        <a href="https://github.com/Arcane-Panda/snake-game">Snake Server/Client</a><br />
+        <ul>
+          <li>Multiplayer snake, one program runs the server and the other is the game client</li>
+          <li>Written in C# using .NET MAUI</li>
+        </ul>
+      </li>
+      <li>
+        <a href="https://arcanepanda.itch.io/command-line">Command Line</a><br />
+        <ul>
+          <li>An action text adventure,&nbsp;you must quickly type in commands to tell your ship what to do in order to survive.</li>
+          <li>Made using Gamemaker Studio</li>
+        </ul>
+      </li>
+      <li>
+        <a href="https://ldjam.com/events/ludum-dare/43/something-evil-is-brewing">Something Evil is Brewing</a>
+        <ul>
+          <li>Play as an evil minion leading your impish fellows to victory, but remember, sacrifices must be made!</li>
+          <li>Made using Unity as part of a team</li>
+        </ul>
+      </li>
+      <li>
+        <a href="https://arcanepanda.itch.io/black-sun">Black Sun</a>
+        <ul>
+          <li>In this game you must maneuver around the screen, surviving, and trying to line yourself up with enemies in order to get the highest score possible.</li>
+          <li>Made using Gamemaker Studio</li>
+        </ul>
+      </li>
+      <li>
+        <a href="https://arcanepanda.itch.io/only-one-sun">Only One Sun!</a><br />
+        <ul>
+          <li>Check the luggage of traveling aliens and make sure they only have what they've declared!</li>
+          <li>Made using Gamemaker Studio</li>
+        </ul>
+      </li>
+      <li>
+        <a href="https://arcanepanda.itch.io/5h00t-r4c3r">5H00T R4C3R (Shoot Racer)</a><br />
+        <ul>
+          <li>Drive without steering. The racing game of THE FUTURE!</li>
+          <li>Made using Gamemaker Studio</li>
+        </ul>
+      </li>
+      <li>
+        <a href="https://arcanepanda.itch.io/planet-defender">Planet Defender</a><br />
+        <ul>
+          <li>In this tower defense game, you must fly around colonizing planets, and establishing defenses, industry, or beacons. Use defenses to destroy alien ships, use industry to support your endeavors, and use beacons to lure aliens away&nbsp; from your home.</li>
+          <li>Made using Gamemaker Studio</li>
+        </ul>
+      </li>
+    </ul>
+    <h2>Research</h2>
+    <ul>
+      <li>
+        <a href="https://www.cs.utah.edu/docs/techreports/2025/UUCS-25-005.pdf">Investigating the Role of Gratitude and Self-Reflection in Online Gaming Toxicity</a><br />
+        <ul>
+          <li>My senior thesis, explored the ways technology influences toxic behavior and investigated the power of gratitude as a solution to such behavior.</li>
+          <li>Conducted an experiment with 20 participants and analyzed data using Pandas and Seaborn to uncover the effects of gratitude on toxic behavior</li>
+        </ul>
+      </li>
+      <li>
+        <a href="https://dl.acm.org/doi/abs/10.1145/3563657.3595982">Co-designing Alternatives for the Future of Gig Worker Well-Being</a>
+        <ul>
+          <li>Collaborated with a team at Carnegie Mellon University to use methods of co-design and story-boarding in the novel field of gig-work</li>
+          <li>Interviewed and analyzed the qualitative data of 20 participants resulting in new perspectives from stakeholders on technical solutions for gig-work apps</li>
+          <li>Presented the results of our research at the&nbsp;HCII Research Showcase Symposium, leading to our work being published in the 2023 ACM Journal</li>
+        </ul>
+      </li>
+    </ul>
+  </article>
 
-      </ul>
-   
-   </article>
-      
-   {%include 'sidebar.html'%}
+  {% include 'sidebar.html' %}
 </main>
 
-{%include 'footer.html'%}
+{% include 'footer.html' %}
