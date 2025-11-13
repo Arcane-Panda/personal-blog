@@ -24,7 +24,7 @@ aside h2 {font-family: "DynaPuff", sans-serif; font-size: 125%; color: #3F5DCC}
 
 main{padding-bottom: 1rem; margin: 0 0 0rem 0 ; display: flex; flex-direction: row; gap: 1rem; justify-content: center; flex: 1;
 background-image: url("../static/SiteLogoTransparent.png"); background-size: 220px;}
-aside{background-color: #F2F2F2; border-radius: 10px; width: 15%; display: flex; flex-direction: column; align-items: center;}
+aside{background-color: #F2F2F2; border-radius: 10px; width: 20%; display: flex; flex-direction: column; align-items: center;}
 aside details{align-self: flex-start; padding-left: 1rem;}
 aside details a{padding-left: 2rem; margin: 0;}
 aside details summary{cursor: pointer;}
@@ -81,7 +81,14 @@ aside ul a:hover{text-decoration: underline;}
 
 
 
-@media (max-width: 1470px)
+@media (max-width: 1130px)
+{
+    aside{width: 30%;}
+    main div{width: 60%;}
+}
+
+/*
+@media(max-width:750px)
 {
     aside{display: none;}
     header img {max-height: 100px;}
@@ -89,10 +96,28 @@ aside ul a:hover{text-decoration: underline;}
     main article{width:95%; margin-left: 1rem; font-size: 150%;}
     main article footer {font-size: 100%;}
     header img {margin-top: 0.5rem; max-height: 350px; max-width: 350px;}
-    header{font-size: 300%;}
+    header{font-size: 200%;}
     header nav{flex-direction: column;}
-    footer{font-size: 200%; padding: 0.5rem;}
+    footer{font-size: 150%; padding: 0.5rem;}
     main{font-size:x-large;}
     main table td{padding-right: 1rem;}
     table{padding:0 0 0 1rem;}
+}
+*/
+@media(max-width:750px)
+{
+    aside{display: none;}
+    
+    main div{width:95%}
+    main article{width:95%; margin-left: 1rem; font-size: 100%;}
+    main article footer {font-size: 100%;}
+    header img {margin-top: 0.5rem; max-height: 200px; max-width: 200px;}
+    header{font-size: 110%;}
+    header nav{flex-direction: column; width: 100%; margin: 0;}
+    footer{font-size: 120%; padding: 0.5rem;}
+    main{font-size:medium;}
+    main table td{padding-right: 1rem;}
+    main div table img {max-width: 100px; }
+    table{padding:0 0 0 1rem;}
+    table td {vertical-align: top;}
 }
